@@ -7,6 +7,7 @@ const path = require('path');
 const Filter = require('bad-words');
 const { generateMessage, generateLocation } = require('../utils/message');
 const { addUser, removeUser, getUser, getUsersInRoom } = require('../utils/users');
+const PORT = process.env.PORT || 8080;
 
 //Intanstiate app
 const app = express();
@@ -84,6 +85,6 @@ io.on('connection', (socket) => {
 })
 
 //listen server on port
-server.listen(8080, () => {
-    console.log('Listening on port ' + 8080);
+server.listen(PORT, () => {
+    console.log('Listening on port ' + PORT);
 })
